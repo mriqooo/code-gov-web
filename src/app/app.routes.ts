@@ -29,6 +29,8 @@ export const ROUTES: Routes = [
       { path: 'privacy-policy', component: PrivacyPolicyComponent },
       { path: 'faqs', component: FaqsComponent },
       { path: 'roadmap', component: RoadmapComponent },
+      {path: 'browse-projects',
+        loadChildren: './components/browse-projects/browse-projects-routing.module#BrowseProjectsModule'},
       { path: 'browse-projects', component: BrowseProjectsComponent },
       { path: 'open-tasks', component: HelpWantedComponent },
       { path: '**', component: FourOhFourComponent },

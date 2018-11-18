@@ -41,6 +41,8 @@ import { StatusService } from './services/status';
 import { MonacoEditorService } from './components/monaco-editor';
 import { UrlSerializer } from '@angular/router';
 import { CustomUrlSerializer } from './serializers/custom-url-serializer';
+import { BrowseProjectsModule } from './components/browse-projects/browse-projects.module';
+import { SharedModule } from './shared.module';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -67,20 +69,18 @@ const APP_PROVIDERS = [
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    InfiniteScrollModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
     MetaModule.forRoot(),
-    NgxPaginationModule,
+    SharedModule,
+    BrowseProjectsModule
   ],
   declarations: [
     APP_COMPONENTS,
     ExternalLinkDirective,
     CapitalizePipe,
     LanguageIconPipe,
-    PluralizePipe,
     IsDefinedPipe,
     ToggleMenuDirective,
-    TruncatePipe
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
