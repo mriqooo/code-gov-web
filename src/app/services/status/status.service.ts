@@ -112,10 +112,9 @@ class ComplianceStatusResponse {
 export class StatusService {
   constructor(private http: Http) {}
 
-  getJsonFile(): Observable<ComplianceStatusResponse> {
+  getJsonFile(): Observable<any> {
     return this.http.get(
       'assets/report.json'
-    )
-    .map(response => response.json());
+    );
   }
 }

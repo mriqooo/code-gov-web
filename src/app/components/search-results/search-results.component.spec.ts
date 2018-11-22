@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { TestBed, ComponentFixture, inject } from '@angular/core/testing';
 import { Observable } from 'rxjs/Observable';
@@ -40,7 +40,7 @@ describe('SearchResultsComponent', () => {
       imports: [
         ReactiveFormsModule,
         RouterModule.forRoot([]),
-        HttpModule,
+        HttpModule, FormsModule
       ],
       declarations: [
         PluralizePipe,
@@ -64,7 +64,7 @@ describe('SearchResultsComponent', () => {
   describe('component logic', () => {
     it('should have defined SearchResultsComponent instance', () => {
       fixture.detectChanges();
-      expect(component).toBeDefined();
+      expect(component).toBeTruthy();
     });
   });
 
